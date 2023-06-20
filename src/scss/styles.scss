@@ -9,8 +9,6 @@
 body {
   height: 100vh;
   background-color: $bg;
-  & > *:not(script) {
-  }
 }
 
 main {
@@ -32,21 +30,27 @@ main {
       @include list;
     }
   }
-  .img {
+  .imges {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
-    background-image: url(/img/1.jpg);
-    background-size: cover;
-    background-position: center;
+
+    img {
+      width: 720px;
+      height: 690px;
+      object-fit: cover;
+    }
+    .hidden {
+      display: none;
+    }
   }
   span {
     &:nth-child(3) {
       @include list;
     }
   }
-  .asd {
+  .last-text {
     color: $bg;
-    font-size: 28px;
+    font-size: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,7 +58,7 @@ main {
     overflow: hidden;
     span {
       text-transform: uppercase;
-      animation: text 10s ease-in-out infinite;
+      animation: text 1s ease-in-out both;
     }
   }
 }
@@ -63,13 +67,10 @@ main {
   0% {
     transform: translateY(100px);
   }
-  25% {
-    transform: translateX(-300px);
-  }
   50% {
-    transform: translateX(300px);
+    transform: translateY(-10px);
   }
   100% {
-    transform: translateX(-300px);
+    transform: translateY(0);
   }
 }
